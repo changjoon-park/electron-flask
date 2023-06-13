@@ -1,8 +1,6 @@
 from flask import Flask, render_template
 import os
 import sys
-from app.home import home as home_blueprint
-
 
 def init_extensions(app: Flask):
     # use .init_app() on your extensions to register them on
@@ -42,7 +40,8 @@ def create_app(config_object_name) -> Flask:
 
     with app.app_context():
         # Register Blueprints
-        app.register_blueprint(home_blueprint, url_prefix="/")
+        from .views import main_view
+        app.register_blueprint(main_view.bp)
 
         @app.errorhandler(404)
         def page_not_found(error):
