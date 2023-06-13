@@ -1,2 +1,2 @@
 # electron-flask
-Electron-Flask project template
+A standard template for the Electron-Flask Project
