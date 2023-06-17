@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Electron Flask Integration</h1>
+    <button id="fetchButton">Fetch Data from Flask API</button>
+    <p id="message"></p>
+
+    <script>
+        document.getElementById('fetchButton').addEventListener('click', () => {
+            fetch('http://localhost:5000/')
+                .then(response => response.json())
+                .then(data => document.getElementById('message').innerText = data.message)
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
