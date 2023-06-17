@@ -9,6 +9,7 @@ let mainWindow = null;
 let subpy = null;
 
 const PY_DIST_FOLDER = "dist-python"; // python distributable folder
+const PY_ROOT_FOLDER = "run_app"; // python distributable folder
 const PY_SRC_FOLDER = "web_app"; // path to the python source
 const PY_MODULE = "run_app.py"; // the name of the main module
 
@@ -24,6 +25,7 @@ const getPythonScriptPath = () => {
     return path.join(
       __dirname,
       PY_DIST_FOLDER,
+      PY_ROOT_FOLDER,
       PY_MODULE.slice(0, -3) + ".exe"
     );
   }

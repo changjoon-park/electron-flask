@@ -5,7 +5,6 @@ const spawn = require("child_process").spawn,
     "pyinstaller",
     [
       "-w",
-      "--onefile",
       `--add-data web_app/app/templates${path.delimiter}templates`,
       `--add-data web_app/app/static${path.delimiter}static`,
       "--distpath dist-python",
